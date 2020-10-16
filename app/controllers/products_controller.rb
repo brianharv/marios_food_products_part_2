@@ -1,4 +1,4 @@
-class ProductsController < AppliationController
+class ProductsController < ApplicationController
 
   def index 
     @products = Product.all
@@ -41,6 +41,13 @@ class ProductsController < AppliationController
       end
   end
   
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    #flash[:notice] = "This Product has been deleted"
+    redirect_to products_path
+  end  
+
   private
     def product_params
       params.require(:product).permit(:name, :cost, :country_of_origin)
