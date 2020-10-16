@@ -1,0 +1,14 @@
+<h1>Products</h1>
+
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li> <!--product_path(product). product_path must take an argument because otherwise our application won't be able to route to a specific product. -->
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no products yet.</p>
+<% end %>
+
+
+<p><%= link_to "Create new product", new_product_path %></p>
