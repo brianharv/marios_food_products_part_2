@@ -1,18 +1,15 @@
 class ReviewsController < ApplicationController
 
-  # def index #might remove later...
-  #   @reviews = Review.all
-  #   render :index
-  # end
   
   def new 
-    @review = Review.new
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.new
     render :new
   end
   
   def create
     @product = Product.find(params[:product_id])
-    @review = Review.new(review_params)
+    @review = @product.reviews.new(review_params)
       if @review.save
         #flash[:notice] = "New Review Created Successfully"  #Think about adding string interpolation for Review name.
         redirect_to product_path(@product)
