@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def home
     @products = Product.all
+    @products = Product.three_most_recent
     render :home
   end  
 

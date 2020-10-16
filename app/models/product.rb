@@ -3,6 +3,9 @@ class Product < ApplicationRecord
   validates :name, :cost, :country_of_origin, presence: true
   before_save(:titleize_name)
 
+  scope :three_most_recent,  -> { order(created_at: :desc).limit(3)}
+
+  
   private
   def titleize(user_input)
     input_array = []
