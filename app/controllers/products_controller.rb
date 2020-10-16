@@ -18,10 +18,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
       if @product.save
-        #flash[:notice] = "New Product Created Successfully"  #Think about adding string interpolation for product name.
+        flash[:notice] = "New Product Created Successfully"  #Think about adding string interpolation for product name.
         redirect_to products_path
       else
-        #flash[:alert] = "There was an error while creating product"
+        flash[:alert] = "There was an error while creating product"
         render :new
       end
   end 
@@ -39,10 +39,10 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
       if @product.update(product_params)
-         #flash[:notice] = "Product Updated Successfully"  #Think about adding string interpolation for product name.
+         flash[:notice] = "Product Updated Successfully"  #Think about adding string interpolation for product name.
          redirect_to products_path
       else
-        #flash[:alert] = "There was an error while updating product"
+        flash[:alert] = "There was an error while updating product"
         render :edit
       end
   end
@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    #flash[:notice] = "This Product has been deleted"
+    flash[:notice] = "This Product has been deleted"
     redirect_to products_path
   end  
 

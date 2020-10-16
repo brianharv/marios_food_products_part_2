@@ -11,10 +11,10 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
       if @review.save
-        #flash[:notice] = "New Review Created Successfully"  #Think about adding string interpolation for Review name.
+        flash[:notice] = "New Review Created Successfully"  #Think about adding string interpolation for Review name.
         redirect_to product_path(@product)
       else
-        #flash[:alert] = "There was an error while creating Review"
+        flash[:alert] = "There was an error while creating Review"
         render :new
       end
   end 
@@ -34,10 +34,10 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
       if @review.update(review_params)
-         #flash[:notice] = "Review Updated Successfully"  #Think about adding string interpolation for Review name.
+         flash[:notice] = "Review Updated Successfully"  #Think about adding string interpolation for Review name.
          redirect_to product_path(@review.product)
       else
-        #flash[:alert] = "There was an error while updating Review"
+        flash[:alert] = "There was an error while updating Review"
         render :edit
       end
   end
@@ -45,8 +45,8 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    #flash[:notice] = "Review Deleted"
-    redirect_to product_path(@review.product)
+    flash[:notice] = "Review Deleted"
+    redirect_to reviews_path
   end  
   
   private
