@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
-  def index #might remove later...
-    @reviews = Review.all
-    render :index
-  end
+  # def index #might remove later...
+  #   @reviews = Review.all
+  #   render :index
+  # end
   
   def new 
     @review = Review.new
