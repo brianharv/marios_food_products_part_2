@@ -2,8 +2,11 @@ require 'rails_helper'
 
 describe "the process to delete a product" do
   it "deletes a product" do
+    user = User.new(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
+    user.save
     product = Product.new({:name => "Blue Cheese", :cost => 2.54, :country_of_origin => "France"})
     product.save
+    login_as(user)
     visit products_path
     click_on 'Blue Cheese'
     click_on 'Delete product'
