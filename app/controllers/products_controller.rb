@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user! :except => [:home, :index, :show] do
     redirect_to new_user_session path unless current_user && current_user.admin  
   end
-  
+
   def home
     @products = Product.all
     @products = Product.three_most_recent
@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end  
 
   def index 
-    @products = Product.all
+    @products = Product.order(:name).page(params[:page])
     render :index
   end
   
