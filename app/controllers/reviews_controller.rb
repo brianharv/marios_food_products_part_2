@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, :except => [:home, :index, :show] do
-    redirect_to new_user_session path unless current_user && current_user.admin  
+    redirect_to new_user_session_path unless current_user && current_user.admin  
   end
   
   def new 
