@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe "the process to add a new product" do
   it "adds a new product" do
-    user = User.new(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
-    user.save
+    user = User.create!(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
     login_as (user)
     visit products_path
     click_link 'Create new product'
@@ -16,8 +15,7 @@ describe "the process to add a new product" do
   end
 
   it "gives an error when no name is entered" do
-    user = User.new(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
-    user.save
+    user = User.create!(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
     login_as(user)
     visit products_path
     click_on 'Create new product'
