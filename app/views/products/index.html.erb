@@ -1,29 +1,35 @@
-  <h1 class="text-md-center">Products</h1>
-  <div class="row">
-    <div class="col-md-1">
-    </div>
-    <div class="col-md-5">
-      <% if @products.any? %>
-        <ul>
-          <% @products.each do |product| %>
-            <li><%= link_to product.name, product_path(product) %></li> 
-          <% end %>
-        </ul>
-      <% else %>
-        <p>There are no products yet.</p>
-      <% end %>
-    </div>
+<div class="row">  
+  <div class="col-md-12">
+    <h1 class="text-center">Products</h1>
   </div>
-  <br>
-  <br>
-  <div class="row">
+</div>
+<div class="row">
   <div class="col-md-1">
-    </div>
+  </div>
+  <div class="col-md-5">
+    <% if @products.any? %>
+      <ul>
+        <% @products.each do |product| %>
+          <li><%= link_to product.name, product_path(product) %></li> 
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There are no products yet.</p>
+    <% end %>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-1">
+  </div>
   <div class="col-5">
   </div>
-   <%= link_to "Create new product", new_product_path %> 
+    <%= link_to "Create new product", new_product_path %> 
   </div>  
-  <div class="row">
+<div class="row">
   <div class="col-12 text-center">
     <p><%= paginate @products %></p>
   </div>
+</div>
