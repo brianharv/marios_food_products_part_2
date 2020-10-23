@@ -35,7 +35,6 @@ class ReviewsController < ApplicationController
   end  
   
   def update
-    @product = Product.find(params[:id])
     @review = Review.find(params[:id])
       if @review.update(review_params)
          flash[:notice] = "Review Updated Successfully"  #Think about adding string interpolation for Review name.
@@ -47,11 +46,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @review = Review.find(params[:id])
     @review.destroy
     flash[:notice] = "Review Deleted"
-    redirect_to reviews_path
+    redirect_to product_path(@review.product)
   end  
   
   private

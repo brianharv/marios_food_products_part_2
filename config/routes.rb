@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end  
+
+  get 'delete', to: 'reviews#destroy', as:
+  :review_destroy
 end
