@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <div class="container">
 
     <p class="navbar-text float-right">
     <% if user_signed_in? %>
@@ -26,5 +27,6 @@
     <%= flash[:alert] %>
 
     <%= yield %>
+    </div>
   </body>
 </html>
