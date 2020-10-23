@@ -1,16 +1,17 @@
  ##_Mario's Food Products_
 
-#### _An admin facing inventory application, 10/16/2020_
+#### _An admin facing inventory application, 10/23/2020_
 
 #### By _**Brian Harvey**_
 
 ## Description
 
-_This app allows a user to view, add, delete, and update items in the MARIO'S FOOD PRODUCTS database. Users may also leave reviews and ratings for individual food items._
+_This app allows a user to view, add, delete, and update items in the MARIO'S FOOD PRODUCTS database. Users may also leave reviews and ratings for individual food items. App also authenticates and authorizes users, allowing only admins full CRUD functionality. Users may post reviews of products._
+
 
 ## Setup/Installation Requirements
 
-- Copy the [GitHub Repository Link](https://github.com/brianharv/marios_food_products)
+- Copy the [GitHub Repository Link](https://github.com/brianharv/marios_food_products_part_2)
 - Clone project to desktop <code>$ git clone {REPO LINK}</code>
 - Navigate to project directory <code>$ cd marios_food_products</code>
 - Open project in vscode <code>$ code .</code>
