@@ -3,8 +3,8 @@
 <h3>Rating:<%= @review.content_body %></h3>
 
 
-<p><%= link_to "Edit", edit_product_review_path(@review) %></p>
-<p><%= link_to "Delete review", product_path(@review),
+<p><%= link_to "Edit", edit_product_review_path(@review, @product) %></p>
+<p><%= link_to "Delete review", product_path(@review, @product),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
 
