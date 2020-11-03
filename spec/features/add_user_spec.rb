@@ -6,7 +6,7 @@ describe "#Users" do
     fill_in "Email", :with => "email@gmail.com"
     fill_in "Password",  :with => "tacoCat"
     fill_in "Password confirmation",  :with => 'tacoCat'
-    click_on "Sign Up"
+    click_button "Sign up"
     expect(page).to have_content("You have signed up successfully")
   end
 end

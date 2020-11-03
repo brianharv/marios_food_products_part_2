@@ -4,6 +4,7 @@ describe "the process to add a new product" do
   it "adds a new product" do
     user = User.create!(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
     visit products_path
+    login_as(user, :scope => :user)
     click_link 'Create new product'
     fill_in 'Name', :with => "Blue Cheese"
     fill_in 'Cost', :with => "2.54"
@@ -15,6 +16,7 @@ describe "the process to add a new product" do
 
   it "gives an error when no name is entered" do
     user = User.create!(:email => 'email@gmail.com', :password => 'tacoCat', :admin => true)
+    login_as(user, :scope => :user)
     visit products_path
     click_on 'Create new product'
     click_on 'Create Product'
