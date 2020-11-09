@@ -9,7 +9,6 @@ describe "the process to delete a product" do
     visit products_path
     click_on 'Blue Cheese'
     click_on 'Delete product'
-    save_and_open_page
     expect(page).to have_content("You need to sign in or sign up before continuing.")
     expect(page).to_not have_content("Blue Cheese")
   end

@@ -23,7 +23,7 @@ _This app allows a user to view, add, delete, and update items in the MARIO'S FO
 
 ## Known Bugs
 
-_Currently one of the integration specs is failing._
+_No known bugs._
 
 ## Support and contact details
 
@@ -31,7 +31,10 @@ _For any questions or feedback, feel free to [contact me](mailto:brian.harv3y@gm
 
 ## Technologies Used
 
-- _Ruby on Rails_
+- _Ruby_
+- _Rails_
+- _Warden_
+- _Devise_
 - _Capybara_
 - _HTML_
 - _Rspec_
