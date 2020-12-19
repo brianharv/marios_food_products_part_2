@@ -3,14 +3,24 @@
 
 
 
-.container-fluid {
+.container {
+  background-color: rgb(214, 240, 214);
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 30px;
+  padding: 50px;
 }
 
 .navbar-text {
   font-size: 8pt;
 }
 
+.box {
+  width: 30%;
+  // margin: 10% 10% 5% 10%;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid black 3px;
+  background-color: rgb(180, 206, 180);
+}
 
 
