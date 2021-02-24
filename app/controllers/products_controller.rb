@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.order(:name).page(params[:page])
-    @products = Product.search_by_name(params[:search_name]) unless params[:search_name].blank?
     render :index
   end
 
@@ -59,13 +58,13 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search_by_name(params[:product][:search_name].titleize)
+    @products = Product.search_by_name(params[:product][:name].titleize)
     render :search
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :cost, :country_of_origin, :search_name)
+    params.require(:product).permit(:name, :cost, :country_of_origin)
   end
 end

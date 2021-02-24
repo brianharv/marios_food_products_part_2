@@ -45,10 +45,3 @@ _For any questions or feedback, feel free to [contact me](mailto:brian.harv3y@gm
 *_This application operates under the GPL license._*
 
 Copyright (c) 2020 **_Brian Harvey_**
-
-<%= simple_form_for :search_by_name, url: products_path, :method => :get,
-            wrapper: :inline_form,
-            html: { class: "form-inline" } do |f| %>
-            <%= f.input :search_name, label: "Product Name", placeholder: 'Enter Product Name', input_html: { class: 'mb-2 mr-sm-2'} %>
-            <%= f.button :submit, value: "Search", class: 'btn-primary mb-2' %>
-          <% end %>
