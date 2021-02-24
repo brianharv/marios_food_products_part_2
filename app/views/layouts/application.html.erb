@@ -24,6 +24,16 @@
           <% end %>
           </p>
         </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <%= simple_form_for :product, url: search_path, :method => :get,
+            wrapper: :inline_form,
+            html: { class: "form-inline" } do |f| %>
+            <%= f.input :search_name, label: "Product Name", placeholder: 'Enter Product Name', input_html: { class: 'mb-2 mr-sm-2'} %>
+            <%= f.button :submit, value: "Search", class: 'btn-primary mb-2' %>
+          <% end %>
+        </div>
       </div>
     </div>
 

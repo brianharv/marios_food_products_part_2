@@ -1,11 +1,14 @@
 class Product < ApplicationRecord
+
   has_many :reviews, dependent: :destroy
+
   validates :name, :cost, :country_of_origin, presence: true
-  before_save(:titleize_name)
+
+  before_save :titleize_name
 
   scope :three_most_recent,  -> { order(created_at: :desc).limit(3)}
+  scope :search_by_name, -> (search_name) { where("name like ?", "%#{search_name}%")}
 
-  
   private
   def titleize(user_input)
     input_array = []
@@ -13,10 +16,10 @@ class Product < ApplicationRecord
     user_input.each do |word|
       input_array.push((word.capitalize))
     end
-    input_array.join(' ')  
-  end  
+    input_array.join(' ')
+  end
 
   def titleize_name
     self.name = self.name.titleize
-  end  
-end  
+  end
+end
