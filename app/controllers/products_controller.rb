@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search_by_name(params[:product][:search_name])
+    @products = Product.search_by_name(params[:product][:search_name].titleize)
     render :search
   end
 
